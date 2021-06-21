@@ -9,7 +9,7 @@ import App from "./App";
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: "#085AF6"
+      main: "#2CDEA6"
     },
     secondary: {
       main: "#E81212"

@@ -5,7 +5,7 @@ import { Alert } from "@material-ui/lab/";
 import FilterNoneIcon from "@material-ui/icons/FilterNone";
 
 export default function CopyIcon(props) {
-  const url = `https://zeroschool.org/t/${props.tx}`;
+  const url = `https://app.sapience.space/t/${props.tx}`;
   const [copied, setCopied] = useState(false);
 
   const handleClick = (e) => {
@@ -29,7 +29,7 @@ export default function CopyIcon(props) {
         <FilterNoneIcon />
       </IconButton>
       <Snackbar open={copied} autoHideDuration={3000} onClose={handleClose}>
-        <Alert severity="success">Copied to clipboard</Alert>
+        <Alert severity="success">Copié dans le presse-papier</Alert>
       </Snackbar>
     </div>
   );

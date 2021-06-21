@@ -163,7 +163,7 @@ export default function Search(props) {
                 borderBottom: "1px solid #F2F2F2"
               }}
             >
-              <IconButton onClick={() => history.goBack()}>
+              <IconButton onClick={() => history.push("/")}>
                 <KeyboardBackspaceIcon color="primary" />
               </IconButton>
               <div
@@ -176,7 +176,7 @@ export default function Search(props) {
                   cursor: "pointer"
                 }}
               >
-                Twetch Detail
+                Recherche
               </div>
               <div>
                 <Button
@@ -187,7 +187,7 @@ export default function Search(props) {
                   rel="noreferrer"
                   style={{ textDecoration: "none" }}
                 >
-                  Advanced
+                  Avancée
                 </Button>
               </div>
             </div>
@@ -215,9 +215,9 @@ export default function Search(props) {
                 value={OrderToIndex[orderBy]}
                 onChange={handleChangeOrder}
               >
-                <MenuItem value={0}>Latest</MenuItem>
-                <MenuItem value={10}>Earliest</MenuItem>
-                <MenuItem value={20}>Economy</MenuItem>
+                <MenuItem value={0}>Récents</MenuItem>
+                <MenuItem value={10}>Anciens</MenuItem>
+                <MenuItem value={20}>Économie</MenuItem>
               </Select>
             </FormControl>
           </div>
@@ -250,7 +250,7 @@ export default function Search(props) {
                 }
                 endMessage={
                   <p style={{ textAlign: "center" }}>
-                    <b>Yay! You have seen it all</b>
+                    <b>Bravo ! Vous avez tout vu !</b>
                   </p>
                 }
               >

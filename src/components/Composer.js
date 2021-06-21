@@ -5,12 +5,9 @@ import {
   Grid,
   InputAdornment,
   LinearProgress,
-  Snackbar,
   TextField,
   Typography
 } from "@material-ui/core";
-import { Alert } from "@material-ui/lab";
-import { Link } from "react-router-dom";
 
 import { BSVABI } from "../utils/BSVABI";
 import { twquery } from "../api/TwetchGraph";
@@ -27,7 +24,6 @@ export default function Composer(props) {
     "Que voulez vous *vraiment* apprendre ?"
   );
   const [content, setContent] = useState("");
-  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     if (replyTx) {
@@ -60,14 +56,6 @@ export default function Composer(props) {
     e.preventDefault();
     twetchPost(content, replyTx);
     setContent("");
-  };
-
-  const handleClose = (event, reason) => {
-    if (reason === "clickaway") {
-      return;
-    }
-
-    setOpen(false);
   };
 
   const getColor = () => {
@@ -160,16 +148,6 @@ export default function Composer(props) {
           </Grid>
         </Grid>
       </form>
-      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
-        <Alert
-          onClose={handleClose}
-          severity="info"
-          variant="filled"
-          onClick={(e) => e.stopPropagation()}
-        >
-          Transaction réussie ! <Link to={`/t/`}>voir</Link>
-        </Alert>
-      </Snackbar>
     </div>
   );
 }
@@ -182,7 +160,7 @@ const twetchPost = async (text, replyTx) => {
   let content = text;
   let hash = window.location.hash;
   if (!hash) {
-    hash = "$zeroschool";
+    hash = "$spnc";
   }
   content += ` ${hash}`;
   //console.log(boost);

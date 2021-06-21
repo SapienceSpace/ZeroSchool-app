@@ -12,6 +12,7 @@ import {
   ListItemText,
   Typography
 } from "@material-ui/core";
+import LockOpenIcon from "@material-ui/icons/LockOpen";
 import HomeOutlinedIcon from "@material-ui/icons/HomeOutlined";
 import HelpOutlineOutlinedIcon from "@material-ui/icons/HelpOutlineOutlined";
 import EmojiObjectsOutlinedIcon from "@material-ui/icons/EmojiObjectsOutlined";
@@ -244,7 +245,9 @@ export default function AppBar(props) {
         <div style={{ float: "right" }}>
           {!localStorage.tokenTwetchAuth ? (
             <Link style={{ textDecoration: "none" }} to="/auth">
-              <Button color="primary">Se connecter</Button>
+              <IconButton color="primary">
+                <LockOpenIcon />
+              </IconButton>
             </Link>
           ) : (
             <div>
