@@ -63,7 +63,7 @@ export default function Profile(props) {
       setLoading(false);
     });
     fetchMore();
-    getBoosts().then((res) => setBoosts(res));
+    //getBoosts().then((res) => setBoosts(res));
   }, [orderBy, userId]);
 
   const handleChangeOrder = (event) => {

@@ -33,7 +33,7 @@ const OrderToIndex = {
 };
 
 export default function Home(props) {
-  const filter = "";
+  const filter = "$nce";
   //console.log(filter);
   const [orderBy, setOrderBy] = useState(indexToOrder[0]);
   //const [filter, setFilter] = useState(props.filter);
@@ -51,7 +51,7 @@ export default function Home(props) {
     setLoading(true);
     fetchMore();
     setLoading(false);
-    getBoosts().then((res) => setBoosts(res));
+    //getBoosts().then((res) => setBoosts(res));
   }, [orderBy, filter]);
 
   const fetchMore = () => {
